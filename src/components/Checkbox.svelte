@@ -1,15 +1,18 @@
 <script>
-  import { formData } from "../stores";
-  export let name;
+  export let checkbox;
 </script>
 
 <style type="text/scss">
+  .checkbox {
+    margin-right: 20px;
+  }
 </style>
 
 <div class="checkbox">
   <label class="checkbox">
     <input
       type="checkbox"
-      on:click={() => ($formData[name] = !$formData[name])} />
-    {name}</label>
+      checked={checkbox.checked}
+      on:click={() => (checkbox.checked = !checkbox.checked)} />
+    {checkbox.value}</label>
 </div>

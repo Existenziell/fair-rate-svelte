@@ -42,11 +42,52 @@ html, body {
 
 
 /* ==========================================================================
+	Global
+	========================================================================== */
+
+.is-flex {
+	display: flex;
+}
+
+hr {
+	margin: 40px 0px;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+nav {
+	text-align: center;
+}
+
+nav a {
+	color: black;
+	text-decoration: none;
+}
+
+input[type=text] {
+	width: 400px !important;
+	height: 90px;
+}
+
+
+/* ==========================================================================
 	Form  -  https://codepen.io/swapnet/pen/QWwPVwE?editors=1100
 	========================================================================== */
 
 	.application-form {
 		
+		h2 {
+			background-color: black;
+			color: white;
+			padding: 10px 20px;
+			font-size: 20px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	
 		$ruler: 16px;
 		$color-red: #ae1100;
 		$color-bg: #ebecf0;
