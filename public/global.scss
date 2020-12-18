@@ -53,12 +53,6 @@ html, body {
 		$color-shadow: #babecc;
 		$color-white: #fff;
 
-		div,
-		p {
-			color: $color-shadow;
-			text-shadow: 1px 1px 1px $color-white;
-		}
-
 		form {
 			padding: $ruler;
 			width: $ruler * 20;
@@ -75,7 +69,8 @@ html, body {
 			border: 0;
 			outline: 0;
 			font-size: $ruler;
-			border-radius: $ruler * 20;
+			// border-radius: $ruler * 20;
+			border-radius: 3px;
 			padding: $ruler;
 			background-color: $color-bg;
 			text-shadow: 1px 1px 0 $color-white;

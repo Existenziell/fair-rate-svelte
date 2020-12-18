@@ -1,8 +1,7 @@
 <script>
+	import Form from "./Form.svelte";
 	import { Router, Route, Link } from "svelte-routing";
 	export let url = ""; //This property is necessary to avoid ignore the Router
-
-	import Form from "./Form.svelte";
 </script>
 
 <style type="text/scss">

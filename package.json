@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/Existenziell/fair-rate#readme",
   "scripts": {
-    "build": "rollup -c --environment NODE_ENV:production",
+    "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
   },
@@ -45,7 +45,8 @@
     "svelte-range-slider-pips": "^1.5.0",
     "svelte-routing": "^1.4.2",
     "svelte-time-picker": "^1.0.6",
-    "timeUtils": "^2.0.0"
+    "timeUtils": "^2.0.0",
+    "yup": "^0.32.8"
   },
   "dependencies": {
     "sirv-cli": "^1.0.0"
