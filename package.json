@@ -43,7 +43,6 @@
     "svelte-preprocess": "^4.6.1",
     "svelte-preprocess-sass": "^0.2.0",
     "svelte-range-slider-pips": "^1.5.0",
-    "svelte-routing": "^1.4.2",
     "svelte-time-picker": "^1.0.6",
     "timeUtils": "^2.0.0",
     "yup": "^0.32.8"

@@ -7,6 +7,7 @@
 - https://console.firebase.google.com/project/fairrate-72b4a/overview
 - https://dashboard.fauna.com/db/FairRate
 
+- https://www.lemonade.com/start/12
 - https://singlefamily.fanniemae.com/media/15171/display
 - https://plaid.com/
 

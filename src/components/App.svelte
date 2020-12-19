@@ -1,33 +1,67 @@
 <script>
 	import Form from "./Form.svelte";
-	import Instructions from "./Instructions.svelte";
-	import { Router, Route, Link } from "svelte-routing";
-	export let url = ""; //This property is necessary to avoid ignore the Router
+	import Step from "./Step.svelte";
+	import Input from "./Input.svelte";
+	import Select from "./Select.svelte";
+	import RadioButton from "./RadioButton.svelte";
+	import Textarea from "./Textarea.svelte";
+	import structure from "../structure.json";
+
+	const steps = structure.steps;
+	const name = "formdata";
 </script>
 
 <style type="text/scss">
-	.main {
-		display: grid;
+	h1 {
+		margin-bottom: 20px;
+		background-color: #efefef;
+		padding: 20px;
+	}
+	h2 {
+		margin-bottom: 40px;
 	}
 	.container {
 		padding: 50px 80px;
+		text-align: center;
+	}
+	.radiobuttons {
+		flex-direction: column;
+		display: flex;
+		text-align: left;
+		margin: 0 auto;
+		width: 400px;
 	}
 </style>
 
-<Router {url}>
-	<main class="main">
-		<nav role="navigation" aria-label="main navigation" class="mb-6">
-			<Link to="/">Form</Link>
-			|
-			<Link to="instructions">Instructions</Link>
-		</nav>
-		<div class="container">
-			<Route path="/" component={Form}>
-				<Form />
-			</Route>
-			<Route path="/instructions" component={Instructions}>
-				<Instructions />
-			</Route>
-		</div>
-	</main>
-</Router>
+<main class="main">
+	<div class="container">
+		<Form {name} let:store let:multi>
+			{#each steps as step}
+				<Step name={step.name} {multi}>
+					<h1>{step.title}</h1>
+					<h2>{step.subtitle}</h2>
+					{#each step.elements as e}
+						{#if e.type === 'text'}
+							<Input {store} name={e.name} placeholder={e.placeholder} />
+						{:else if e.type === 'textarea'}
+							<Textarea {store} name={e.name} placeholder={e.placeholder} />
+						{:else if e.type === 'radio'}
+							<section class="radiobuttons">
+								{#each e.values as value}
+									<RadioButton
+										{store}
+										{value}
+										name={e.name}
+										group={e.name}
+										{...$$restProps} />
+								{/each}
+							</section>
+						{:else if e.type === 'select'}
+							<Select {store} name={e.name} values={e.values} />
+						{/if}
+					{/each}
+				</Step>
+			{/each}
+		</Form>
+	</div>
+</main>

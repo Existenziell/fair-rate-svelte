@@ -1,0 +1,84 @@
+{
+  "steps": [
+    {
+      "name": "step1",
+      "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
+      "subtitle": "Mortgage Applied for:",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "mortgage-type",
+          "type": "radio",
+          "values": [
+            "VA",
+            "Conventional",
+            "Other(explain):",
+            "FHA",
+            "USDA / Rural Housing Service"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "step2",
+      "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
+      "subtitle": "Agency Case Number",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "agency-case-number",
+          "type": "text",
+          "placeholder": "Agency Case Number",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": "step3",
+      "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
+      "subtitle": "Lender Case Number",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "lender-case-number",
+          "type": "text",
+          "placeholder": "Lender Case Number",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": "step4",
+      "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
+      "subtitle": "Choose Stuff",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "choose-stuff",
+          "type": "textarea",
+          "placeholder": "Please explain...",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": "step5",
+      "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
+      "subtitle": "Select Testa",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "dropdown-select",
+          "type": "select",
+          "values": [
+            "VA",
+            "Conventional",
+            "Other(explain):",
+            "FHA",
+            "USDA / Rural Housing Service"
+          ]
+        }
+      ]
+    }
+  ]
+}

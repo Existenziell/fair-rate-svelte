@@ -24,7 +24,9 @@ html, body {
 }
 
 *, body {
+	// font-family: 'Merriweather', 'Montserrat', 'Gotu', 'Lora', serif;
 	font-family: 'Montserrat', 'Gotu', 'Lora', serif;
+	// font-family: 'Gotu', 'Lora', serif;
 	margin: 0;
 	padding: 0;
 	scroll-behavior: smooth;
@@ -53,11 +55,6 @@ hr {
 	margin: 40px 0px;
 }
 
-h1 {
-	text-align: center;
-	margin-bottom: 40px;
-}
-
 nav {
 	text-align: center;
 }
@@ -67,131 +64,77 @@ nav a {
 	text-decoration: none;
 }
 
-input[type=text] {
-	width: 400px !important;
-	height: 90px;
-}
-
 
 /* ==========================================================================
 	Form  -  https://codepen.io/swapnet/pen/QWwPVwE?editors=1100
 	========================================================================== */
-
-	.application-form {
-		
-		h2 {
-			background-color: black;
-			color: white;
-			padding: 10px 20px;
-			font-size: 20px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
 	
-		$ruler: 16px;
-		$color-red: #ae1100;
-		$color-bg: #ebecf0;
-		$color-shadow: #babecc;
-		$color-white: #fff;
+$ruler: 16px;
+$color-red: #ae1100;
+$color-bg: #ebecf0;
+$color-shadow: #babecc;
+$color-white: #fff;
 
-		form {
-			padding: $ruler;
-			width: $ruler * 20;
-			margin: 0 auto;
-		}
+button, input[type=submit],
+input[type=text] {
+	border: 0;
+	outline: 0;
+	font-size: 16px;
+	border-radius: 3px;
+	background-color: $color-bg;
+	text-shadow: 1px 1px 0 $color-white;
+}
 
-		.segment {
-			padding: $ruler * 2 0;
-			text-align: center;
-		}
+input[type=text] {
+	box-shadow: inset 1px 1px 2px $color-shadow,
+			inset -1px -1px 2px $color-white;
+	padding: 20px 25px;
+	width: 400px;
+	box-sizing: border-box;
+	transition: all 0.2s ease-in-out;
+	appearance: none;
+	-webkit-appearance: none;
 
-		button,
-		input[type=text] {
-			border: 0;
-			outline: 0;
-			font-size: $ruler;
-			// border-radius: $ruler * 20;
-			border-radius: 3px;
-			padding: $ruler;
-			background-color: $color-bg;
-			text-shadow: 1px 1px 0 $color-white;
-			margin-top: 20px;
-		}
-
-		label {
-			display: block;
-			margin-bottom: $ruler * 1.5;
-			width: 100%;
-		}
-
-		input[type=text] {
-			margin-right: $ruler/2;
-			box-shadow: inset 2px 2px 5px $color-shadow,
-				inset -5px -5px 10px $color-white;
-			width: 100%;
-			box-sizing: border-box;
-			transition: all 0.2s ease-in-out;
-			appearance: none;
-			-webkit-appearance: none;
-
-			&:focus {
-				box-shadow: inset 1px 1px 2px $color-shadow,
-					inset -1px -1px 2px $color-white;
-			}
-		}
-
-		button {
-			color: #61677c;
-			font-weight: bold;
-			box-shadow: -5px -5px 20px $color-white, 5px 5px 20px $color-shadow;
-			transition: all 0.2s ease-in-out;
-			cursor: pointer;
-			font-weight: 600;
-
-			&:hover {
-				box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
-			}
-
-			&:active {
-				box-shadow: inset 1px 1px 2px $color-shadow,
-					inset -1px -1px 2px $color-white;
-			}
-
-			.icon {
-				margin-right: $ruler/2;
-			}
-
-			&.unit {
-				border-radius: $ruler/2;
-				line-height: 0;
-				width: $ruler * 3;
-				height: $ruler * 3;
-				display: inline-flex;
-				justify-content: center;
-				align-items: center;
-				margin: 0 $ruler/2;
-				font-size: $ruler * 1.2;
-
-				.icon {
-					margin-right: 0;
-				}
-			}
-
-			&.red {
-				display: block;
-				width: 100%;
-				color: $color-red;
-			}
-		}
-
-		.input-group {
-			display: flex;
-			align-items: center;
-			justify-content: flex-start;
-
-			label {
-				margin: 0;
-				flex: 1;
-			}
-		}
+	&:focus {
+		box-shadow: inset 2px 2px 5px $color-shadow,
+		inset -5px -5px 10px $color-white;
 	}
+}
+
+button, input[type=submit] {
+	color: #61677c;
+	font-weight: bold;
+	box-shadow: -5px -5px 20px $color-white, 5px 5px 20px $color-shadow;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	font-weight: 600;
+	padding: 10px 30px;
+
+	&:hover {
+		box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
+	}
+
+	&:active {
+		box-shadow: inset 1px 1px 2px $color-shadow,
+			inset -1px -1px 2px $color-white;
+	}
+}
+
+textarea {
+	resize: vertical;
+	outline: 1px solid #eee;
+	border: none;
+}
+
+textarea:focus { 
+	outline: 1px solid #ccc; 
+}
+
+select {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  line-height: 1.1;
+}
