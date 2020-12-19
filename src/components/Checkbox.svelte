@@ -4,6 +4,7 @@
   export let store;
   export let name;
   export let value;
+  export let isConditional;
 
   const dispatch = createEventDispatcher();
 
