@@ -17,6 +17,7 @@
   .step-container {
     display: flex;
     flex-direction: column;
+    min-height: 480px;
   }
 </style>
 

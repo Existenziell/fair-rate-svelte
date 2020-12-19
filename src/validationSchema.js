@@ -28,6 +28,8 @@ const validationSchema = yup.object().shape({
   "legal-description": yup.string().required(),
   "purpose-of-loan": yup.string().required(),
   "property-will-be": yup.string().required(),
+  "year-acquired": yup.number().required().positive().integer(),
+  "original-cost": yup.number().required().positive().integer(),
 });
 
 export { validationSchema };

@@ -57,6 +57,21 @@
 
   function next() {
     if (Object.keys(multi_loc)[current + 1]) {
+      if (Object.keys(multi_loc)[current] !== "intro") {
+        // If value not set, don't navigate to next step
+        if (
+          $store[Object.keys(multi_loc)[current]] === undefined ||
+          $store[Object.keys(multi_loc)[current]] === ""
+        ) {
+          has_errors = true;
+          errors = "This is a required value.";
+          return false;
+        } else {
+          has_errors = false;
+          errors = "";
+        }
+      }
+
       multi.update((v) => {
         v[Object.keys(multi_loc)[current]] = false;
 
@@ -103,6 +118,8 @@
   .error {
     margin-top: 20px;
     color: crimson;
+    background-color: #efefef;
+    padding: 20px;
   }
   .success {
     margin-top: 20px;

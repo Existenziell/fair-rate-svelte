@@ -4,7 +4,6 @@
       "name": "intro",
       "title": "Uniform Residential Loan Application",
       "subtitle": "",
-      "instructions": "",
       "elements": [
         {
           "name": "intro",
@@ -19,7 +18,6 @@
       "name": "mortgage-type",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
       "subtitle": "Mortgage Applied for:",
-      "instructions": "",
       "elements": [
         {
           "name": "mortgage-type",
@@ -35,80 +33,69 @@
       ]
     },
     {
-      "name": "step2",
+      "name": "agency-case-number",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
       "subtitle": "Agency Case Number",
-      "instructions": "",
       "elements": [
         {
           "name": "agency-case-number",
           "type": "text",
-          "placeholder": "Agency Case Number",
-          "value": ""
+          "placeholder": "Agency Case Number"
         }
       ]
     },
     {
-      "name": "step3",
+      "name": "lender-case-number",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
       "subtitle": "Lender Case Number",
-      "instructions": "",
       "elements": [
         {
           "name": "lender-case-number",
           "type": "text",
-          "placeholder": "Lender Case Number",
-          "value": ""
+          "placeholder": "Lender Case Number"
         }
       ]
     },
     {
-      "name": "step4",
+      "name": "amount",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
       "subtitle": "Amount",
-      "instructions": "",
       "elements": [
         {
           "name": "amount",
           "type": "number",
-          "placeholder": "$",
-          "value": ""
+          "placeholder": "$"
         }
       ]
     },
     {
-      "name": "step5",
+      "name": "interest-rate",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
       "subtitle": "Interest Rate",
-      "instructions": "",
       "elements": [
         {
           "name": "interest-rate",
           "type": "number",
-          "placeholder": "%",
-          "value": ""
+          "placeholder": "%"
         }
       ]
     },
     {
-      "name": "step6",
+      "name": "number-of-months",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
       "subtitle": "Number of Months",
-      "instructions": "",
       "elements": [
         {
           "name": "number-of-months",
           "type": "number",
-          "placeholder": "",
-          "value": ""
+          "placeholder": ""
         }
       ]
     },
     {
-      "name": "step7",
+      "name": "amortization-type",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
       "subtitle": "Amortization Type:",
-      "instructions": "",
       "elements": [
         {
           "name": "amortization-type",
@@ -123,76 +110,65 @@
       ]
     },
     {
-      "name": "step8",
+      "name": "property-address-street",
       "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
       "subtitle": "Subject Property Address",
-      "instructions": "",
       "elements": [
         {
           "name": "property-address-street",
           "type": "text",
-          "value": "",
           "placeholder": "Street"
         },
         {
           "name": "property-address-city",
           "type": "text",
-          "value": "",
           "placeholder": "City"
         },
         {
           "name": "property-address-state",
           "type": "text",
-          "value": "",
           "placeholder": "State"
         },
         {
           "name": "property-address-zip",
           "type": "number",
-          "value": "",
           "placeholder": "Zip"
         }
       ]
     },
     {
-      "name": "step9",
+      "name": "number-of-units",
       "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
       "subtitle": "Subject Property Address",
-      "instructions": "",
       "elements": [
         {
           "name": "number-of-units",
           "type": "number",
-          "value": "",
           "placeholder": "Number of units"
         },
         {
           "name": "year-built",
           "type": "number",
-          "value": "",
           "placeholder": "Year built"
         }
       ]
     },
     {
-      "name": "step10",
+      "name": "legal-description",
       "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
       "subtitle": "Legal Description of Subject Property",
-      "instructions": "",
       "elements": [
         {
           "name": "legal-description",
           "type": "textarea",
-          "placeholder": "Legal Description of Subject Property",
-          "value": ""
+          "placeholder": "Legal Description of Subject Property"
         }
       ]
     },
     {
-      "name": "step11",
+      "name": "purpose-of-loan",
       "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
       "subtitle": "Purpose of Loan",
-      "instructions": "",
       "elements": [
         {
           "name": "purpose-of-loan",
@@ -208,10 +184,9 @@
       ]
     },
     {
-      "name": "step12",
+      "name": "property-will-be",
       "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
       "subtitle": "Property will be:",
-      "instructions": "",
       "elements": [
         {
           "name": "property-will-be",
@@ -225,10 +200,36 @@
       ]
     },
     {
-      "name": "xxi",
+      "name": "construction-loan",
+      "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
+      "subtitle": "Complete this line if construction or construction-permanent loan.",
+      "elements": [
+        {
+          "name": "construction-loan",
+          "type": "checkbox",
+          "isConditional": true,
+          "values": [
+            "Check this box, if this application is for a construction or construction-permanent loan."
+          ]
+        }
+      ],
+      "conditional-elements": [
+        {
+          "name": "year-acquired",
+          "type": "number",
+          "placeholder": "Year acquired"
+        },
+        {
+          "name": "original-cost",
+          "type": "number",
+          "placeholder": "Original Cost"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-select",
       "title": "XXI. FEEDBACK",
       "subtitle": "Select Dropdown Test",
-      "instructions": "",
       "elements": [
         {
           "name": "dropdown-select",

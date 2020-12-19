@@ -1,22 +1,19 @@
 <script>
 	import Form from "./Form.svelte";
 	import Step from "./Step.svelte";
+	import Instructions from "./Instructions.svelte";
 	import Input from "./Input.svelte";
 	import Number from "./Number.svelte";
 	import Select from "./Select.svelte";
 	import Label from "./Label.svelte";
-	import RadioButton from "./RadioButton.svelte";
+	import RadioButton from "./Radiobutton.svelte";
 	import Textarea from "./Textarea.svelte";
+	import Checkbox from "./Checkbox.svelte";
 	import structure from "../structure.json";
-	import Instructions from "./Instructions.svelte";
 
 	const steps = structure.steps;
 	const name = "fairRate";
 	let showInstructions = false;
-
-	const toggleInstructions = () => {
-		showInstructions = !showInstructions;
-	};
 </script>
 
 <style type="text/scss">
@@ -83,10 +80,48 @@
 									<RadioButton {store} {value} name={e.name} />
 								{/each}
 							</section>
+						{:else if e.type === 'checkbox'}
+							<section class="checkboxes">
+								{#each e.values as value}
+									<Checkbox
+										{store}
+										{value}
+										name={e.name}
+										isConditional={e.isConditional} />
+								{/each}
+							</section>
 						{:else if e.type === 'select'}
 							<Select {store} name={e.name} values={e.values} />
 						{/if}
 					{/each}
+
+					{#if 'conditional-elements' in step}
+						{#each step['conditional-elements'] as c}
+							{#if c.type === 'text'}
+								<Input {store} name={c.name} placeholder={c.placeholder} />
+							{:else if c.type === 'number'}
+								<Number {store} name={c.name} placeholder={c.placeholder} />
+							{:else if c.type === 'textarea'}
+								<Textarea {store} name={c.name} placeholder={c.placeholder} />
+							{:else if c.type === 'label'}
+								<Label text={c.values} />
+							{:else if c.type === 'radio'}
+								<section class="radiobuttons">
+									{#each c.values as value}
+										<RadioButton {store} {value} name={c.name} />
+									{/each}
+								</section>
+							{:else if c.type === 'checkbox'}
+								<section class="checkboxes">
+									{#each c.values as value}
+										<Checkbox {store} {value} name={c.name} />
+									{/each}
+								</section>
+							{:else if c.type === 'select'}
+								<Select {store} name={c.name} values={c.values} />
+							{/if}
+						{/each}
+					{/if}
 				</Step>
 			{/each}
 		</Form>
