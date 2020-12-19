@@ -108,7 +108,7 @@
 							{:else if c.type === 'radio'}
 								<section class="radiobuttons">
 									{#each c.values as value}
-										<RadioButton {store} {value} name={c.name} />
+										<Radiobutton {store} {value} name={c.name} />
 									{/each}
 								</section>
 							{:else if c.type === 'checkbox'}
