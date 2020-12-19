@@ -13,6 +13,7 @@
 
   let multi_loc = {};
   let current = 0;
+  let is_success = false;
   let has_errors = false;
   let errors = [];
 
@@ -22,10 +23,13 @@
     validationSchema
       .validate($store)
       .then((value) => {
+        is_success = true;
+        has_errors = false;
         // console.log("valid! ", value);
       })
       .catch((err) => {
         has_errors = true;
+        is_success = false;
         errors = err;
         // console.log(err);
       });
@@ -96,13 +100,25 @@
       opacity: 1;
     }
   }
+  .error {
+    margin-top: 20px;
+    color: crimson;
+  }
+  .success {
+    margin-top: 20px;
+    color: darkcyan;
+  }
 </style>
 
 <form on:submit={onSubmit}>
   <slot {store} {multi} />
 
   {#if has_errors}
-    <div class="errors">{errors}</div>
+    <div class="error">{errors}</div>
+  {/if}
+
+  {#if is_success}
+    <div class="success">Thank you, your data has been saved successfully</div>
   {/if}
 
   <div class="controls">

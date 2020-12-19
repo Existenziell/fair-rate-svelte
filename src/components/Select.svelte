@@ -24,9 +24,9 @@
     width: 400px;
     border: 1px solid #ccc;
     border-radius: 0.25em;
-    padding: 0.5em 1em;
+    padding: 14px 20px;
     cursor: pointer;
-    line-height: 1.1;
+    font-size: 18px;
   }
 </style>
 

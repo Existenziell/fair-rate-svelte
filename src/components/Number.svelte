@@ -42,12 +42,11 @@
       box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px white;
     }
   }
-
   label:not(:last-of-type) {
     margin-bottom: 10px;
   }
 </style>
 
 <label>
-  <input type="text" bind:value on:input={onInput} {name} {placeholder} />
+  <input type="number" bind:value on:input={onInput} {name} {placeholder} />
 </label>

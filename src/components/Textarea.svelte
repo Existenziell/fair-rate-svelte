@@ -26,6 +26,7 @@
     resize: vertical;
     outline: 1px solid #eee;
     border: none;
+    font-size: 16px;
   }
 
   textarea:focus {

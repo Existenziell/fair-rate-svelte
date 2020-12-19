@@ -27,9 +27,9 @@
           "values": [
             "VA",
             "Conventional",
-            "Other(explain):",
             "FHA",
-            "USDA / Rural Housing Service"
+            "USDA / Rural Housing Service",
+            "Other (explain):"
           ]
         }
       ]
@@ -70,7 +70,7 @@
       "elements": [
         {
           "name": "amount",
-          "type": "text",
+          "type": "number",
           "placeholder": "$",
           "value": ""
         }
@@ -84,7 +84,7 @@
       "elements": [
         {
           "name": "interest-rate",
-          "type": "text",
+          "type": "number",
           "placeholder": "%",
           "value": ""
         }
@@ -98,7 +98,7 @@
       "elements": [
         {
           "name": "number-of-months",
-          "type": "text",
+          "type": "number",
           "placeholder": "",
           "value": ""
         }
@@ -116,41 +116,129 @@
           "values": [
             "Fixed Rate",
             "GPM",
-            "Other (explain):",
-            "ARM (type):"
+            "ARM (type):",
+            "Other (explain):"
           ]
         }
       ]
     },
     {
-      "name": "step99",
-      "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
-      "subtitle": "Your Feedback",
+      "name": "step8",
+      "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
+      "subtitle": "Subject Property Address",
       "instructions": "",
       "elements": [
         {
-          "name": "feedback",
+          "name": "property-address-street",
+          "type": "text",
+          "value": "",
+          "placeholder": "Street"
+        },
+        {
+          "name": "property-address-city",
+          "type": "text",
+          "value": "",
+          "placeholder": "City"
+        },
+        {
+          "name": "property-address-state",
+          "type": "text",
+          "value": "",
+          "placeholder": "State"
+        },
+        {
+          "name": "property-address-zip",
+          "type": "number",
+          "value": "",
+          "placeholder": "Zip"
+        }
+      ]
+    },
+    {
+      "name": "step9",
+      "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
+      "subtitle": "Subject Property Address",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "number-of-units",
+          "type": "number",
+          "value": "",
+          "placeholder": "Number of units"
+        },
+        {
+          "name": "year-built",
+          "type": "number",
+          "value": "",
+          "placeholder": "Year built"
+        }
+      ]
+    },
+    {
+      "name": "step10",
+      "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
+      "subtitle": "Legal Description of Subject Property",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "legal-description",
           "type": "textarea",
-          "placeholder": "We would love to hear your feedback :)",
+          "placeholder": "Legal Description of Subject Property",
           "value": ""
         }
       ]
     },
     {
-      "name": "step98",
-      "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
-      "subtitle": "Select Testa",
+      "name": "step11",
+      "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
+      "subtitle": "Purpose of Loan",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "purpose-of-loan",
+          "type": "radio",
+          "values": [
+            "Purchase",
+            "Refinance",
+            "Construction",
+            "Construction-Permanent",
+            "Other (explain):"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "step12",
+      "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
+      "subtitle": "Property will be:",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "property-will-be",
+          "type": "radio",
+          "values": [
+            "Primary Residence",
+            "Secondary Residence",
+            "Investment"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "xxi",
+      "title": "XXI. FEEDBACK",
+      "subtitle": "Select Dropdown Test",
       "instructions": "",
       "elements": [
         {
           "name": "dropdown-select",
           "type": "select",
           "values": [
-            "VA",
-            "Conventional",
-            "Other(explain):",
-            "FHA",
-            "USDA / Rural Housing Service"
+            "Leon",
+            "Katie",
+            "Elon",
+            "Chris",
+            "Other (explain):"
           ]
         }
       ]
