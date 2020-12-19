@@ -43,6 +43,7 @@
     checked={value === $store[name]}
     {name}
     on:input={onInput}
+    {isConditional}
     bind:value />
   {value}
 </label>
