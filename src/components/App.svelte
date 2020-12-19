@@ -6,7 +6,7 @@
 	import Number from "./Number.svelte";
 	import Select from "./Select.svelte";
 	import Label from "./Label.svelte";
-	import Radiobutton from "./Radiobutton.svelte";
+	import Radio from "./Radio.svelte";
 	import Textarea from "./Textarea.svelte";
 	import Checkbox from "./Checkbox.svelte";
 	import structure from "../structure.json";
@@ -77,7 +77,7 @@
 						{:else if e.type === 'radio'}
 							<section class="radiobuttons">
 								{#each e.values as value}
-									<Radiobutton {store} {value} name={e.name} />
+									<Radio {store} {value} name={e.name} />
 								{/each}
 							</section>
 						{:else if e.type === 'checkbox'}
@@ -108,7 +108,7 @@
 							{:else if c.type === 'radio'}
 								<section class="radiobuttons">
 									{#each c.values as value}
-										<Radiobutton {store} {value} name={c.name} />
+										<Radio {store} {value} name={c.name} />
 									{/each}
 								</section>
 							{:else if c.type === 'checkbox'}
