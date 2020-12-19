@@ -1,22 +1,37 @@
 <script>
+  import Button from "./Button.svelte";
   import { createEventDispatcher, onMount } from "svelte";
   import { writable } from "svelte/store";
-
   import { local } from "../localStore";
+  import { validationSchema } from "../validationSchema";
 
   export let name;
 
   const dispatch = createEventDispatcher();
-
   const store = name !== undefined ? local(name, {}) : writable({});
   const multi = writable({});
 
   let multi_loc = {};
   let current = 0;
+  let has_errors = false;
+  let errors = [];
 
   multi.subscribe((v) => (multi_loc = v));
 
-  const onSubmit = (e) => dispatch("submit", { e, store });
+  const onSubmit = (e) => {
+    validationSchema
+      .validate($store)
+      .then((value) => {
+        // console.log("valid! ", value);
+      })
+      .catch((err) => {
+        has_errors = true;
+        errors = err;
+        // console.log(err);
+      });
+
+    dispatch("submit", { e, store });
+  };
 
   function prev() {
     if (Object.keys(multi_loc)[current - 1]) {
@@ -74,16 +89,21 @@
     position: absolute;
     top: 15px;
     left: 25px;
-    color: #cececf;
+    color: #aa418c;
     font-size: 42px;
+    opacity: 0.8;
     &:hover {
-      color: #666;
+      opacity: 1;
     }
   }
 </style>
 
-<form on:submit={onSubmit} {...$$restProps}>
+<form on:submit={onSubmit}>
   <slot {store} {multi} />
+
+  {#if has_errors}
+    <div class="errors">{errors}</div>
+  {/if}
 
   <div class="controls">
     {#if Object.keys(multi_loc)[current - 1]}
@@ -93,11 +113,11 @@
     {/if}
 
     {#if Object.keys(multi_loc)[current + 1]}
-      <button on:click|preventDefault={next}>Next</button>
+      <Button handler={next} value="Next" />
     {/if}
 
     {#if !Object.keys(multi_loc)[current + 1]}
-      <input type="submit" placeholder="Submit" />
+      <Button handler={onSubmit} value="Submit" />
     {/if}
   </div>
 </form>

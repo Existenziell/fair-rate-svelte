@@ -3,6 +3,7 @@
 	import Step from "./Step.svelte";
 	import Input from "./Input.svelte";
 	import Select from "./Select.svelte";
+	import Label from "./Label.svelte";
 	import RadioButton from "./RadioButton.svelte";
 	import Textarea from "./Textarea.svelte";
 	import structure from "../structure.json";
@@ -13,7 +14,7 @@
 
 <style type="text/scss">
 	h1 {
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 		background-color: #efefef;
 		padding: 20px;
 	}
@@ -40,20 +41,18 @@
 				<Step name={step.name} {multi}>
 					<h1>{step.title}</h1>
 					<h2>{step.subtitle}</h2>
+
 					{#each step.elements as e}
 						{#if e.type === 'text'}
 							<Input {store} name={e.name} placeholder={e.placeholder} />
 						{:else if e.type === 'textarea'}
 							<Textarea {store} name={e.name} placeholder={e.placeholder} />
+						{:else if e.type === 'label'}
+							<Label text={e.values} />
 						{:else if e.type === 'radio'}
 							<section class="radiobuttons">
 								{#each e.values as value}
-									<RadioButton
-										{store}
-										{value}
-										name={e.name}
-										group={e.name}
-										{...$$restProps} />
+									<RadioButton {store} {value} name={e.name} />
 								{/each}
 							</section>
 						{:else if e.type === 'select'}

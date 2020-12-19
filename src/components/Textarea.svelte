@@ -21,8 +21,15 @@
 <style>
   textarea {
     width: 400px;
-    height: 300px;
+    height: 200px;
     padding: 18px 22px;
+    resize: vertical;
+    outline: 1px solid #eee;
+    border: none;
+  }
+
+  textarea:focus {
+    outline: 1px solid #ccc;
   }
 </style>
 

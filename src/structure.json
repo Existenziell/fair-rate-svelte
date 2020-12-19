@@ -1,7 +1,22 @@
 {
   "steps": [
     {
-      "name": "step1",
+      "name": "intro",
+      "title": "Uniform Residential Loan Application",
+      "subtitle": "",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "intro",
+          "type": "label",
+          "values": [
+            "<p>This application is designed to be completed by the applicant(s) with the Lender’s assistance. Applicants should complete this form as “Borrower” or “Co-Borrower,” as applicable. Co-Borrower information must also be provided (and the appropriate box checked) when  the income or assets of a person other than the Borrower (including the Borrower’s spouse) will be used as a basis for loan qualification or  the income or assets of the Borrower’s spouse or other person who has community property rights pursuant to state law will not be used as a basis for loan qualification, but his or her liabilities must be considered because the spouse or other person has community property rights pursuant to applicable law and Borrower resides in a community property state, the security property is located in a community property state, or the Borrower is relying on other property located in a community property state as a basis for repayment of the loan.</p>&nbsp;<p>If this is an application for joint credit, Borrower and Co-Borrower each agree that we intend to apply for joint credit (sign below):</p>"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mortgage-type",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
       "subtitle": "Mortgage Applied for:",
       "instructions": "",
@@ -50,19 +65,79 @@
     {
       "name": "step4",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
-      "subtitle": "Choose Stuff",
+      "subtitle": "Amount",
       "instructions": "",
       "elements": [
         {
-          "name": "choose-stuff",
-          "type": "textarea",
-          "placeholder": "Please explain...",
+          "name": "amount",
+          "type": "text",
+          "placeholder": "$",
           "value": ""
         }
       ]
     },
     {
       "name": "step5",
+      "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
+      "subtitle": "Interest Rate",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "interest-rate",
+          "type": "text",
+          "placeholder": "%",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": "step6",
+      "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
+      "subtitle": "Number of Months",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "number-of-months",
+          "type": "text",
+          "placeholder": "",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": "step7",
+      "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
+      "subtitle": "Amortization Type:",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "amortization-type",
+          "type": "radio",
+          "values": [
+            "Fixed Rate",
+            "GPM",
+            "Other (explain):",
+            "ARM (type):"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "step99",
+      "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
+      "subtitle": "Your Feedback",
+      "instructions": "",
+      "elements": [
+        {
+          "name": "feedback",
+          "type": "textarea",
+          "placeholder": "We would love to hear your feedback :)",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": "step98",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
       "subtitle": "Select Testa",
       "instructions": "",

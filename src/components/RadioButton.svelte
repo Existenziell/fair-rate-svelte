@@ -40,7 +40,6 @@
     checked={value === $store[name]}
     {name}
     on:input={onInput}
-    bind:value
-    {...$$restProps} />
+    bind:value />
   {value}
 </label>

@@ -1,8 +1,48 @@
-<script>
-</script>
+<h1>Uniform Residential Loan Application</h1>
+<p>
+  This application is designed to be completed by the applicant(s) with the
+  Lender’s assistance. Applicants should complete this form as “Borrower” or
+  “Co-Borrower,” as applicable. Co-Borrower information must also be provided
+  (and the appropriate box checked) when  the income or assets of a person other
+  than the Borrower (including the Borrower’s spouse) will be used as a basis
+  for loan qualification or  the income or assets of the Borrower’s spouse or
+  other person who has community property rights pursuant to state law will not
+  be used as a basis for loan qualification, but his or her liabilities must be
+  considered because the spouse or other person has community property rights
+  pursuant to applicable law and Borrower resides in a community property state,
+  the security property is located in a community property state, or the
+  Borrower is relying on other property located in a community property state as
+  a basis for repayment of the loan.
+</p>
+<p>
+  If this is an application for joint credit, Borrower and Co-Borrower each
+  agree that we intend to apply for joint credit (sign below):
+</p>
 
-<style>
-</style>
+<section>
+  <h2>I. TYPE OF MORTGAGE AND TERMS OF LOAN</h2>
+</section>
+<section>
+  <h2>II. PROPERTY INFORMATION AND PURPOSE OF LOAN</h2>
+</section>
+<section>
+  <h2>III. BORROWER INFORMATION</h2>
+</section>
+<section>
+  <h2>IV. EMPLOYMENT INFORMATION</h2>
+</section>
+<section>
+  <h2>V. MONTHLY INCOME AND COMBINED HOUSING EXPENSE INFORMATION</h2>
+</section>
+<section>
+  <h2>VI. ASSETS AND LIABILITIES</h2>
+</section>
+<section>
+  <h2>VII. DETAILS OF TRANSACTION</h2>
+</section>
+<section>
+  <h2>VIII. DECLARATIONS</h2>
+</section>
 
 <section>
   <h2>IX. ACKNOWLEDGEMENT AND AGREEMENT</h2>
@@ -54,4 +94,28 @@
     source, including a source named in this application or a consumer reporting
     agency.
   </p>
+</section>
+
+<section>
+  <h2>X. INFORMATION FOR GOVERNMENT MONITORING PURPOSES</h2>
+  <p>
+    The following information is requested by the Federal Government for certain
+    types of loans related to a dwelling in order to monitor the lender's
+    compliance with equal credit opportunity, fair housing and ho me mortgage
+    disclosure laws . You are no t requ ired to furnish this in formation, bu t
+    are en couraged to do so . Th e law p rovides t hat a le nder may not
+    discriminate ei ther o n t he bas is of t his information, or on whether you
+    choose to furnish it. If y ou furnish the information, please provide both
+    ethnicity and race. Fo r race, you may check m ore than one designation. If
+    you do not furnish ethnicity, race, or sex, under Federal regulations, this
+    lender is required to note the information on the basis of visual
+    observation and surname if you have made this application in person. If you
+    do not wish to furnish the information, please check the box below. (Lender
+    must review the above material to assure that the disclosures satisfy all
+    requirements to which the lender is subject under applicable state law for
+    the particular type of loan applied for.)
+  </p>
+</section>
+<section>
+  <h2>CONTINUATION SHEET/RESIDENTIAL LOAN APPLICATION</h2>
 </section>
