@@ -89,7 +89,7 @@
         // If value not set, don't navigate to next step
         if (!$store[Object.keys(multi_loc)[current]]) {
           has_errors = true;
-          errors = "This is a required value.";
+          errors = "This is a required field.";
           return false;
         } else {
           has_errors = false;
