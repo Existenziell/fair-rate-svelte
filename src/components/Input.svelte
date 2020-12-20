@@ -28,7 +28,6 @@
     outline: 0;
     font-size: 16px;
     border-radius: 3px;
-    // background-color: #efefef;
     text-shadow: 1px 1px 0 white;
     box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px white;
     padding: 20px 25px;

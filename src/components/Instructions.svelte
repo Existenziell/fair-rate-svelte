@@ -1,3 +1,12 @@
+<script>
+  import Button from "./Button.svelte";
+  export let showInstructions;
+
+  const instructions = () => {
+    showInstructions = !showInstructions;
+  };
+</script>
+
 <style type="text/scss">
   h2 {
     font-size: 20px;
@@ -13,6 +22,9 @@
     padding: 50px 80px;
     background-color: white;
     margin-bottom: 40px;
+  }
+  .back {
+    margin: 40px 0px;
   }
 </style>
 
@@ -225,4 +237,8 @@
     of the form, this language may be added to the continuation sheet or
     included as an attachment to Form 1003.
   </p>
+
+  <div class="back">
+    <Button handler={instructions} value="Back" />
+  </div>
 </section>

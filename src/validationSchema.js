@@ -19,6 +19,7 @@ const validationSchema = yup.object().shape({
   "interest-rate": yup.number().required().positive(),
   "number-of-months": yup.number().required().positive().integer(),
 
+  // ToDo Fix nested property-address
   "property-address-zip": yup.number().required().positive().integer(),
   "property-address-street": yup.string().required(),
   "property-address-city": yup.string().required(),

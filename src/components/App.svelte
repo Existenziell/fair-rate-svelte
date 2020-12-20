@@ -57,13 +57,11 @@
 
 <main class="main">
 	<div class="container">
-		<Form {name} let:store let:multi>
+		<Form {name} let:store let:multi {showInstructions}>
 			{#each steps as step}
 				<Step name={step.name} {multi}>
-					<h1>{step.title}</h1>
-					{#if step.subtitle}
-						<h2>{step.subtitle}</h2>
-					{/if}
+					<h1>{showInstructions ? 'INSTRUCTIONS' : step.title}</h1>
+					<h2>{step.subtitle ? step.subtitle : ''}</h2>
 
 					{#each step.elements as e}
 						{#if e.type === 'text'}
@@ -136,5 +134,5 @@
 </main>
 
 {#if showInstructions}
-	<Instructions />
+	<Instructions bind:showInstructions />
 {/if}

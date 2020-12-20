@@ -6,6 +6,7 @@
   import { validationSchema } from "../validationSchema";
 
   export let name;
+  export let showInstructions;
 
   const dispatch = createEventDispatcher();
   const store = name !== undefined ? local(name, {}) : writable({});
@@ -32,7 +33,7 @@
       const content = await res.json();
       return content;
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -75,11 +76,14 @@
   function next() {
     if (Object.keys(multi_loc)[current + 1]) {
       if (Object.keys(multi_loc)[current] !== "intro") {
+        // console.log(
+        //   current,
+        //   Object.keys(multi_loc)[current],
+        //   $store[Object.keys(multi_loc)[current]]
+        // );
+
         // If value not set, don't navigate to next step
-        if (
-          $store[Object.keys(multi_loc)[current]] === undefined ||
-          $store[Object.keys(multi_loc)[current]] === ""
-        ) {
+        if (!$store[Object.keys(multi_loc)[current]]) {
           has_errors = true;
           errors = "This is a required value.";
           return false;
@@ -156,12 +160,13 @@
   {/if}
 
   <div class="controls">
-    {#if Object.keys(multi_loc)[current - 1]}
-      <a href="/" on:click|preventDefault={prev} class="prev">
-        <i class="fas fa-chevron-left" />
-      </a>
+    {#if !showInstructions}
+      {#if Object.keys(multi_loc)[current - 1]}
+        <a href="/" on:click|preventDefault={prev} class="prev">
+          <i class="fas fa-chevron-left" />
+        </a>
+      {/if}
     {/if}
-
     {#if Object.keys(multi_loc)[current + 1]}
       <Button handler={next} value="Next" />
     {/if}

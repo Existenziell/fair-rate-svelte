@@ -28,7 +28,10 @@
             "FHA",
             "USDA / Rural Housing Service",
             "Other (explain):"
-          ]
+          ],
+          "validation": {
+            "required": "true"
+          }
         }
       ]
     },
@@ -217,7 +220,7 @@
         {
           "name": "year-acquired",
           "type": "number",
-          "placeholder": "Year acquired"
+          "placeholder": "Year Lot acquired"
         },
         {
           "name": "original-cost",
