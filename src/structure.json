@@ -17,7 +17,7 @@
     {
       "name": "mortgage-type",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
-      "subtitle": "Mortgage Applied for:",
+      "subtitle": "Mortgage Applied for",
       "elements": [
         {
           "name": "mortgage-type",
@@ -27,7 +27,7 @@
             "Conventional",
             "FHA",
             "USDA / Rural Housing Service",
-            "Other (explain):"
+            "Other (explain)"
           ],
           "validation": {
             "required": "true"
@@ -98,7 +98,7 @@
     {
       "name": "amortization-type",
       "title": "I. TYPE OF MORTGAGE AND TERMS OF LOAN",
-      "subtitle": "Amortization Type:",
+      "subtitle": "Amortization Type",
       "elements": [
         {
           "name": "amortization-type",
@@ -106,8 +106,8 @@
           "values": [
             "Fixed Rate",
             "GPM",
-            "ARM (type):",
-            "Other (explain):"
+            "ARM (type)",
+            "Other (explain)"
           ]
         }
       ]
@@ -181,7 +181,7 @@
             "Refinance",
             "Construction",
             "Construction-Permanent",
-            "Other (explain):"
+            "Other (explain)"
           ]
         }
       ]
@@ -189,7 +189,7 @@
     {
       "name": "property-will-be",
       "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
-      "subtitle": "Property will be:",
+      "subtitle": "Property will be",
       "elements": [
         {
           "name": "property-will-be",
@@ -205,7 +205,7 @@
     {
       "name": "construction-loan",
       "title": "II. PROPERTY INFORMATION AND PURPOSE OF LOAN",
-      "subtitle": "Complete this line if construction or construction-permanent loan.",
+      "subtitle": "",
       "elements": [
         {
           "name": "construction-loan",
@@ -226,24 +226,6 @@
           "name": "original-cost",
           "type": "number",
           "placeholder": "Original Cost"
-        }
-      ]
-    },
-    {
-      "name": "dropdown-select",
-      "title": "XXI. FEEDBACK",
-      "subtitle": "Select Dropdown Test",
-      "elements": [
-        {
-          "name": "dropdown-select",
-          "type": "select",
-          "values": [
-            "Leon",
-            "Katie",
-            "Elon",
-            "Chris",
-            "Other (explain):"
-          ]
         }
       ]
     }

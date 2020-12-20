@@ -3,7 +3,13 @@
 # FairRate
 
 
-## Backend
+## URLs
+
+Frontend: https://fair-rate.netlify.app
+Backend:  https://fair-rate-api.herokuapp.com
+
+## Resources
+
 - https://console.firebase.google.com/project/fairrate-72b4a/overview
 - https://dashboard.fauna.com/db/FairRate
 

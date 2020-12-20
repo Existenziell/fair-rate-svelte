@@ -239,6 +239,6 @@
   </p>
 
   <div class="back">
-    <Button handler={instructions} value="Back" />
+    <Button handler={instructions} value="Close" />
   </div>
 </section>

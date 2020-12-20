@@ -1,9 +1,10 @@
 <script>
-  import Button from "./Button.svelte";
   import { createEventDispatcher, onMount } from "svelte";
   import { writable } from "svelte/store";
   import { local } from "../localStore";
   import { validationSchema } from "../validationSchema";
+  import Button from "./Button.svelte";
+  import Success from "./Success.svelte";
 
   export let name;
   export let showInstructions;
@@ -17,6 +18,7 @@
   let is_success = false;
   let has_errors = false;
   let errors = [];
+  let saved = false;
 
   multi.subscribe((v) => (multi_loc = v));
 
@@ -40,11 +42,13 @@
   const onSubmit = (e) => {
     validationSchema
       .validate($store)
-      .then((value) => {
-        is_success = true;
-        has_errors = false;
-
-        storeInDB(value);
+      .then(async (value) => {
+        const res = await storeInDB(value);
+        if (res) {
+          is_success = true;
+          has_errors = false;
+          saved = true;
+        }
       })
       .catch((err) => {
         has_errors = true;
@@ -123,7 +127,7 @@
     position: relative;
   }
   .controls {
-    margin-top: 40px;
+    margin-top: 20px;
   }
   .prev {
     position: absolute;
@@ -136,28 +140,39 @@
       opacity: 1;
     }
   }
-  .error {
+  .error-container {
+    height: 80px;
     margin-top: 20px;
-    color: crimson;
     background-color: #efefef;
-    padding: 20px;
-  }
-  .success {
-    margin-top: 20px;
-    color: darkcyan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .error {
+      color: crimson;
+    }
+    .success {
+      color: darkcyan;
+    }
   }
 </style>
 
 <form on:submit={onSubmit}>
-  <slot {store} {multi} />
-
-  {#if has_errors}
-    <div class="error">{errors}</div>
+  {#if saved}
+    <Success />
+  {:else}
+    <slot {store} {multi} />
   {/if}
-
-  {#if is_success}
-    <div class="success">Thank you, your data has been saved successfully</div>
-  {/if}
+  <div class="error-container">
+    {#if has_errors}
+      <div class="error">{errors}</div>
+    {/if}
+    {#if is_success}
+      <div class="success">
+        Thank you, your data has been saved successfully.
+      </div>
+    {/if}
+  </div>
 
   <div class="controls">
     {#if !showInstructions}
@@ -172,7 +187,13 @@
     {/if}
 
     {#if !Object.keys(multi_loc)[current + 1]}
-      <Button handler={onSubmit} value="Submit" />
+      {#if saved}
+        <Button
+          handler={() => (window.location.href = 'http://www.fair-rate.com')}
+          value="More Information" />
+      {:else}
+        <Button handler={onSubmit} value="Submit" />
+      {/if}
     {/if}
   </div>
 </form>

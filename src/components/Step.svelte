@@ -1,4 +1,6 @@
 <script>
+  import { fade } from "svelte/transition";
+
   export let name;
   export let multi;
 
@@ -22,7 +24,7 @@
 </style>
 
 {#if visible}
-  <div class="step-container">
+  <div class="step-container" in:fade={{ duration: 300 }}>
     <slot />
   </div>
 {/if}

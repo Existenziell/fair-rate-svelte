@@ -20,10 +20,10 @@
 	main {
 		font-family: "Montserrat", "Gotu", "Lora", serif;
 	}
-	h1 {
-		margin-bottom: 40px;
+	.header {
 		background-color: #efefef;
 		padding: 20px;
+		margin-bottom: 40px;
 	}
 	h2 {
 		margin-bottom: 40px;
@@ -31,7 +31,6 @@
 	.container {
 		text-align: center;
 	}
-
 	.radiobuttons {
 		flex-direction: column;
 		display: flex;
@@ -60,7 +59,9 @@
 		<Form {name} let:store let:multi {showInstructions}>
 			{#each steps as step}
 				<Step name={step.name} {multi}>
-					<h1>{showInstructions ? 'INSTRUCTIONS' : step.title}</h1>
+					<div class="header">
+						<h1>{showInstructions ? 'INSTRUCTIONS' : step.title}</h1>
+					</div>
 					<h2>{step.subtitle ? step.subtitle : ''}</h2>
 
 					{#each step.elements as e}
