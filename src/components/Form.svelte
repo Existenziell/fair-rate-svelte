@@ -19,19 +19,36 @@
 
   multi.subscribe((v) => (multi_loc = v));
 
+  const storeInDB = async (form) => {
+    try {
+      const res = await fetch(`${process.env.API_URL}/forms/`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ form: form }),
+      });
+      const content = await res.json();
+      return content;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const onSubmit = (e) => {
     validationSchema
       .validate($store)
       .then((value) => {
         is_success = true;
         has_errors = false;
-        // console.log("valid! ", value);
+
+        storeInDB(value);
       })
       .catch((err) => {
         has_errors = true;
         is_success = false;
         errors = err;
-        // console.log(err);
       });
 
     dispatch("submit", { e, store });

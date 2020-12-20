@@ -7,6 +7,7 @@ import css from 'rollup-plugin-css-only';
 import preprocess from 'svelte-preprocess';
 import json from '@rollup/plugin-json';
 import scss from "rollup-plugin-scss";
+import injectProcessEnv from 'rollup-plugin-inject-process-env';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -74,6 +75,10 @@ export default {
 		commonjs(),
 
 		json(),
+
+		injectProcessEnv({
+			API_URL: process.env.API_URL
+		}),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
