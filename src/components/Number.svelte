@@ -2,13 +2,12 @@
   import { createEventDispatcher } from "svelte";
 
   export let store;
-  export let name;
-  export let placeholder;
+  export let element;
+  const {name, placeholder, unit} = element;
 
   const dispatch = createEventDispatcher();
 
   let value;
-
   store.subscribe((v) => (value = v[name]));
 
   const onInput = (e) => {
@@ -28,11 +27,10 @@
     outline: 0;
     font-size: 16px;
     border-radius: 3px;
-    // background-color: #efefef;
     text-shadow: 1px 1px 0 white;
     box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px white;
     padding: 20px 25px;
-    width: 400px;
+    width: 200px;
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
     appearance: none;
@@ -45,8 +43,13 @@
   label:not(:last-of-type) {
     margin-bottom: 10px;
   }
+  span {
+    font-size: 26px;
+    margin-left: 5px;
+  }
 </style>
 
 <label>
   <input type="number" bind:value on:input={onInput} {name} {placeholder} />
+  <span>{unit ? unit : ""}</span>
 </label>

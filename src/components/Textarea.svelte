@@ -2,7 +2,8 @@
   import { createEventDispatcher } from "svelte";
 
   export let store;
-  export let name;
+  export let element;
+  const { name, placeholder } = element;
 
   const dispatch = createEventDispatcher();
 
@@ -35,5 +36,5 @@
 </style>
 
 <label>
-  <textarea bind:value on:input={onInput} {name} {...$$restProps} />
+  <textarea bind:value on:input={onInput} {name} {placeholder} />
 </label>

@@ -67,7 +67,8 @@
         {
           "name": "amount",
           "type": "number",
-          "placeholder": "$"
+          "placeholder": "Amount of loan",
+          "unit": "$"
         }
       ]
     },
@@ -79,7 +80,8 @@
         {
           "name": "interest-rate",
           "type": "number",
-          "placeholder": "%"
+          "placeholder": "Interest Rate",
+          "unit": "%"
         }
       ]
     },
@@ -225,7 +227,22 @@
         {
           "name": "original-cost",
           "type": "number",
-          "placeholder": "Original Cost"
+          "placeholder": "Original Cost",
+          "unit": "$"
+        }
+      ]
+    },
+    {
+      "name": "review",
+      "title": "Acknowledgment",
+      "subtitle": "",
+      "elements": [
+        {
+          "name": "review",
+          "type": "label",
+          "values": [
+            "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius cursus enim, sit amet sodales enim aliquet quis. Praesent aliquet ornare iaculis. Integer ut sapien non mi luctus auctor. Etiam dapibus sed orci in euismod. Suspendisse rutrum tincidunt orci, id mattis lectus. Nulla iaculis tortor at blandit porttitor. Fusce ac lacinia nisi, eget interdum sem.</p>"
+          ]
         }
       ]
     }

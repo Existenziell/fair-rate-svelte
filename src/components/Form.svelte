@@ -4,6 +4,7 @@
   import { local } from "../localStore";
   import { validationSchema } from "../validationSchema";
   import Button from "./Button.svelte";
+  import Loading from "./Loading.svelte";
   import Success from "./Success.svelte";
 
   export let name;
@@ -15,10 +16,12 @@
 
   let multi_loc = {};
   let current = 0;
-  let is_success = false;
+
   let has_errors = false;
   let errors = [];
-  let saved = false;
+
+  export let submitting;
+  export let saved;
 
   multi.subscribe((v) => (multi_loc = v));
 
@@ -40,19 +43,19 @@
   };
 
   const onSubmit = (e) => {
+    submitting = true;
     validationSchema
       .validate($store)
       .then(async (value) => {
         const res = await storeInDB(value);
         if (res) {
-          is_success = true;
           has_errors = false;
+          submitting = false;
           saved = true;
         }
       })
       .catch((err) => {
         has_errors = true;
-        is_success = false;
         errors = err;
       });
 
@@ -140,7 +143,7 @@
       opacity: 1;
     }
   }
-  .error-container {
+  .error-wrapper {
     height: 80px;
     margin-top: 20px;
     background-color: #efefef;
@@ -151,31 +154,25 @@
     .error {
       color: crimson;
     }
-    .success {
-      color: darkcyan;
-    }
   }
 </style>
 
 <form on:submit={onSubmit}>
-  {#if saved}
+  {#if submitting}
+    <Loading />
+  {:else if saved}
     <Success />
   {:else}
     <slot {store} {multi} />
+    <div class="error-wrapper">
+      {#if has_errors}
+        <div class="error">{errors}</div>
+      {/if}
+    </div>
   {/if}
-  <div class="error-container">
-    {#if has_errors}
-      <div class="error">{errors}</div>
-    {/if}
-    {#if is_success}
-      <div class="success">
-        Thank you, your data has been saved successfully.
-      </div>
-    {/if}
-  </div>
 
   <div class="controls">
-    {#if !showInstructions}
+    {#if !showInstructions && !saved && !submitting}
       {#if Object.keys(multi_loc)[current - 1]}
         <a href="/" on:click|preventDefault={prev} class="prev">
           <i class="fas fa-chevron-left" />
@@ -187,12 +184,8 @@
     {/if}
 
     {#if !Object.keys(multi_loc)[current + 1]}
-      {#if saved}
-        <Button
-          handler={() => (window.location.href = 'http://www.fair-rate.com')}
-          value="More Information" />
-      {:else}
-        <Button handler={onSubmit} value="Submit" />
+      {#if !submitting && !saved}
+        <Button handler={onSubmit} value="Submit Form" />
       {/if}
     {/if}
   </div>

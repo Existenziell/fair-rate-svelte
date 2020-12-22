@@ -14,6 +14,8 @@
 	const steps = structure.steps;
 	const name = "fairRate";
 	let showInstructions = false;
+	let formSaved = false;
+	let submitting = false;
 </script>
 
 <style type="text/scss">
@@ -56,68 +58,76 @@
 
 <main class="main">
 	<div class="container">
-		<Form {name} let:store let:multi {showInstructions}>
+		<Form
+			{name}
+			let:store
+			let:multi
+			{showInstructions}
+			saved={formSaved}
+			{submitting}>
 			{#each steps as step}
 				<Step name={step.name} {multi}>
 					<div class="header">
-						<h1>{showInstructions ? 'INSTRUCTIONS' : step.title}</h1>
+						{#if !submitting}
+							<h1>{showInstructions ? 'INSTRUCTIONS' : step.title}</h1>
+						{/if}
 					</div>
 					<h2>{step.subtitle ? step.subtitle : ''}</h2>
 
-					{#each step.elements as e}
-						{#if e.type === 'text'}
-							<Input {store} name={e.name} placeholder={e.placeholder} />
-						{:else if e.type === 'number'}
-							<Number {store} name={e.name} placeholder={e.placeholder} />
-						{:else if e.type === 'textarea'}
-							<Textarea {store} name={e.name} placeholder={e.placeholder} />
-						{:else if e.type === 'label'}
-							<Label text={e.values} />
-						{:else if e.type === 'radio'}
+					{#each step.elements as element}
+						{#if element.type === 'text'}
+							<Input {store} {element} />
+						{:else if element.type === 'number'}
+							<Number {store} {element} />
+						{:else if element.type === 'textarea'}
+							<Textarea {store} {element} />
+						{:else if element.type === 'label'}
+							<Label text={element.values} />
+						{:else if element.type === 'radio'}
 							<section class="radiobuttons">
-								{#each e.values as value}
-									<Radiobutton {store} {value} name={e.name} />
+								{#each element.values as value}
+									<Radiobutton {store} {value} name={element.name} />
 								{/each}
 							</section>
-						{:else if e.type === 'checkbox'}
+						{:else if element.type === 'checkbox'}
 							<section class="checkboxes">
-								{#each e.values as value}
+								{#each element.values as value}
 									<Checkbox
 										{store}
 										{value}
-										name={e.name}
-										isConditional={e.isConditional} />
+										name={element.name}
+										isConditional={element.isConditional} />
 								{/each}
 							</section>
-						{:else if e.type === 'select'}
-							<Select {store} name={e.name} values={e.values} />
+						{:else if element.type === 'select'}
+							<Select {store} name={element.name} values={element.values} />
 						{/if}
 					{/each}
 
 					{#if 'conditional-elements' in step}
-						{#each step['conditional-elements'] as c}
-							{#if c.type === 'text'}
-								<Input {store} name={c.name} placeholder={c.placeholder} />
-							{:else if c.type === 'number'}
-								<Number {store} name={c.name} placeholder={c.placeholder} />
-							{:else if c.type === 'textarea'}
-								<Textarea {store} name={c.name} placeholder={c.placeholder} />
-							{:else if c.type === 'label'}
-								<Label text={c.values} />
-							{:else if c.type === 'radio'}
+						{#each step['conditional-elements'] as element}
+							{#if element.type === 'text'}
+								<Input {store} {element} />
+							{:else if element.type === 'number'}
+								<Number {store} {element} />
+							{:else if element.type === 'textarea'}
+								<Textarea {store} {element} />
+							{:else if element.type === 'label'}
+								<Label text={element.values} />
+							{:else if element.type === 'radio'}
 								<section class="radiobuttons">
-									{#each c.values as value}
-										<Radiobutton {store} {value} name={c.name} />
+									{#each element.values as value}
+										<Radiobutton {store} {value} name={element.name} />
 									{/each}
 								</section>
-							{:else if c.type === 'checkbox'}
+							{:else if element.type === 'checkbox'}
 								<section class="checkboxes">
-									{#each c.values as value}
-										<Checkbox {store} {value} name={c.name} />
+									{#each element.values as value}
+										<Checkbox {store} {value} name={element.name} />
 									{/each}
 								</section>
-							{:else if c.type === 'select'}
-								<Select {store} name={c.name} values={c.values} />
+							{:else if element.type === 'select'}
+								<Select {store} name={element.name} values={element.values} />
 							{/if}
 						{/each}
 					{/if}
@@ -134,6 +144,6 @@
 	</a>
 </main>
 
-{#if showInstructions}
+{#if showInstructions && !formSaved}
 	<Instructions bind:showInstructions />
 {/if}

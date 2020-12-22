@@ -2,8 +2,8 @@
   import { createEventDispatcher } from "svelte";
 
   export let store;
-  export let name;
-  export let placeholder;
+  export let element;
+  const {name, placeholder} = element;
 
   const dispatch = createEventDispatcher();
 

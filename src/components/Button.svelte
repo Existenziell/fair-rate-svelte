@@ -1,6 +1,7 @@
 <script>
   export let value;
   export let handler;
+  export let width = "";
 </script>
 
 <style type="text/scss">
@@ -31,4 +32,4 @@
   }
 </style>
 
-<button on:click|preventDefault={handler}>{value}</button>
+<button on:click|preventDefault={handler} style="width={width}">{value}</button>

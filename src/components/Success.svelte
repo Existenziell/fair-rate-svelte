@@ -1,3 +1,7 @@
+<script>
+  import Button from "./Button.svelte";
+</script>
+
 <style>
   h2 {
     font-size: 66px;
@@ -12,7 +16,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     min-height: 360px;
+  }
+  .mt30 {
+    margin-top: 30px;
   }
 </style>
 
@@ -23,6 +31,12 @@
 
   <div class="container">
     <h2>FairRate</h2>
-    <p>Thank you for using our service. For more information visit this link</p>
+    <p>Thank you for using our service.</p>
+    <div class="mt30">
+      <Button
+        handler={() => (window.location.href = 'http://www.fair-rate.com')}
+        value="Visit Website"
+        width="200" />
+    </div>
   </div>
 </div>
