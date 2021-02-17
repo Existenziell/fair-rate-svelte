@@ -1,17 +1,17 @@
 {
-  "name": "fair-rate",
+  "name": "fair-rate-svelte",
   "version": "1.0.0",
   "description": "fairRate App",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Existenziell/fair-rate.git"
+    "url": "git+https://github.com/Existenziell/fair-rate-svelte.git"
   },
   "author": "Christof Bauer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Existenziell/fair-rate/issues"
+    "url": "https://github.com/Existenziell/fair-rate-svelte/issues"
   },
-  "homepage": "https://github.com/Existenziell/fair-rate#readme",
+  "homepage": "https://github.com/Existenziell/fair-rate-svelte#readme",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
